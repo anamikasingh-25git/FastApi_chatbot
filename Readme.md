@@ -32,6 +32,7 @@ PostgreSQL for chat metadata
 MongoDB for storing dynamic conversation content
 
 ---
+
 ### 2. Create and Activate Virtual Environment
 
 ```bash
@@ -88,6 +89,7 @@ uvicorn main:app --reload
 ---
 
 ## 🔌 API Documentation
+for run all those api Use postman collection file fastAPI.postman_collection.json
 
 ### Authentication
 

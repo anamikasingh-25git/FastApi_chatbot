@@ -17,7 +17,21 @@ This is a **microservice-based chat backend** built with **FastAPI**, designed t
 git clone https://github.com/yourusername/fastapi-chat-backend.git
 cd fastapi-chat-backend
 ```
+---
 
+##  🚀 Start Dockerized Databases
+From the root of your project, run:
+
+```bash
+docker-compose up -d
+```
+This will start:
+
+PostgreSQL for chat metadata
+
+MongoDB for storing dynamic conversation content
+
+---
 ### 2. Create and Activate Virtual Environment
 
 ```bash
@@ -62,19 +76,6 @@ alembic upgrade head
 ```
 
 If you'd like the exact contents of a sample migration file or Docker support added, let me know!
-
----
-##  🚀 Start Dockerized Databases
-From the root of your project, run:
-
-```bash
-docker-compose up -d
-```
-This will start:
-
-PostgreSQL for chat metadata
-
-MongoDB for storing dynamic conversation content
 
 ---
 

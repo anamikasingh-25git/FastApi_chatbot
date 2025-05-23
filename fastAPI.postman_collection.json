@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "96c28fd8-0571-46ef-b947-3aa47eba4f7c",
+		"name": "fastAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "44427521"
+	},
+	"item": [
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"root\",\r\n  \"password\": \"root\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/auth/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "create chat",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNzQ4MDAwMzkzfQ.WeJOWE9hGMJ0ZxpdHxbyDBko7IEDS-VaUSi72Utnrp8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"root2\",\r\n  \"chat_type\": \"personal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/chats/create-chat/"
+			},
+			"response": []
+		},
+		{
+			"name": "add message",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNzQ3OTg0NzkwfQ.NSg-YvXFQHUaXt2FnJO2nA9pSDwnbciDgLNpoKmL8lQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"chat_id\": \"71008ade-05fe-4c47-86cf-a6ccc9c4fe88\",\r\n  \"question\": \"this is a new 2\",\r\n  \"response\": \"thasnk 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/messages/add-message/"
+			},
+			"response": []
+		},
+		{
+			"name": "create branch",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNzQ3OTIyODQ5fQ.oA7UtZjhLxyon4gehe5uMupdITqiGtYtjXzn4czEPFk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"original_chat_id\": \"1537fe23-fc2a-438d-8dad-5a1c3aba0bd0\",\r\n  \"branch_from_response_id\": \"test\",\r\n  \"new_chat_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/branches/create-branch/"
+			},
+			"response": []
+		},
+		{
+			"name": "delete chat",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNzQ3OTIxNzAxfQ.ghVj99tJYA4Eq5WXHq6FpHEIOFae0pCu58k89GrklSQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"original_chat_id\": \"5dd46183-4eca-46d1-adab-9e36eab186b6\",\r\n  \"branch_from_response_id\": \"test\",\r\n  \"new_chat_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/chats/delete-chat/5dd46183-4eca-46d1-adab-9e36eab186b6"
+			},
+			"response": []
+		},
+		{
+			"name": "set-active-branch",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNzQ3OTIxNzAxfQ.ghVj99tJYA4Eq5WXHq6FpHEIOFae0pCu58k89GrklSQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"chat_id\": \"1537fe23-fc2a-438d-8dad-5a1c3aba0bd0\",\r\n  \"branch_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/branches/set-active-branch"
+			},
+			"response": []
+		},
+		{
+			"name": "get chat",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNzQ3OTg0NzkwfQ.NSg-YvXFQHUaXt2FnJO2nA9pSDwnbciDgLNpoKmL8lQ",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/api/v1/chats/get-chat"
+			},
+			"response": []
+		},
+		{
+			"name": "user register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"root\",\r\n  \"password\": \"root\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "update chat",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNzQ3OTg0NzkwfQ.NSg-YvXFQHUaXt2FnJO2nA9pSDwnbciDgLNpoKmL8lQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"root\",\r\n  \"chat_type\": \"personal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/v1/chats/update-chat/0f915d05-8732-49f3-8273-33c86de9a465"
+			},
+			"response": []
+		},
+		{
+			"name": "delete chat",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNzQ3OTg0NzkwfQ.NSg-YvXFQHUaXt2FnJO2nA9pSDwnbciDgLNpoKmL8lQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/chats/delete-chat/0f915d05-8732-49f3-8273-33c86de9a465?",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"chats",
+						"delete-chat",
+						"0f915d05-8732-49f3-8273-33c86de9a465"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all message",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNzQ3OTg0NzkwfQ.NSg-YvXFQHUaXt2FnJO2nA9pSDwnbciDgLNpoKmL8lQ",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/api/v1/messages/all-messages"
+			},
+			"response": []
+		}
+	]
+}
